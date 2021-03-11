@@ -50,6 +50,7 @@ MonoBehaviour:
   piece: {fileID: 7712250745148382174}
   gameConfiguration: {fileID: 11400000, guid: 4849e9292d6f7ca43974af88b7af1f47, type: 2}
   gridSettings: {fileID: 11400000, guid: b713859ca18967e48b25efb529f1f1d8, type: 2}
+  spawner: {fileID: 11400000, guid: 80ad590f36ebe964bb1fa05caf3555af, type: 2}
 --- !u!1 &7712250745879576119
 GameObject:
   m_ObjectHideFlags: 0
@@ -167,7 +168,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7712250746178611304}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10, y: 40, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7712250745148382175}

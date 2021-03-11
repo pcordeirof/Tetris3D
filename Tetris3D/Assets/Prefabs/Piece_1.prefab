@@ -210,7 +210,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6491349744081935843}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10, y: 40, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6491349744764324559}
@@ -360,6 +360,7 @@ MonoBehaviour:
   piece: {fileID: 6491349744764324400}
   gameConfiguration: {fileID: 11400000, guid: 4849e9292d6f7ca43974af88b7af1f47, type: 2}
   gridSettings: {fileID: 11400000, guid: b713859ca18967e48b25efb529f1f1d8, type: 2}
+  spawner: {fileID: 11400000, guid: 80ad590f36ebe964bb1fa05caf3555af, type: 2}
 --- !u!1 &6491349745125049791
 GameObject:
   m_ObjectHideFlags: 0

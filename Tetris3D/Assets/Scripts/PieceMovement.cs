@@ -13,9 +13,11 @@ public class PieceMovement : MonoBehaviour
 
     bool isMovable = true;
 
+    public Spawner spawner;
+
     void Start()
     {
-        
+        piece.transform.position = new Vector3(Mathf.FloorToInt(gridSettings.Width.Value / 2), gridSettings.Height.Value, 0f);
     }
 
 
@@ -85,8 +87,11 @@ public class PieceMovement : MonoBehaviour
         timer = 0f;
         if (!CheckPositionValidation())
         {
-            piece.transform.position += Vector3.up;
             isMovable = false;
+            piece.transform.position += Vector3.up;
+            gridSettings.RegisterBlocks(piece);
+            gridSettings.CheckLines();
+            spawner.SpawnNewPiece();
         }
     }
 
@@ -97,6 +102,11 @@ public class PieceMovement : MonoBehaviour
             if(block.transform.position.x >= gridSettings.Width.Value || block.transform.position.x < 0 || block.transform.position.y < 0)
             {
                 Debug.LogError(block.transform.position.x);
+                return false;
+            }
+
+            if(gridSettings.GridOfBlocks[(int)block.position.x, (int)block.position.y] != null && block.position.y < gridSettings.Height.Value)
+            {
                 return false;
             }
         }
