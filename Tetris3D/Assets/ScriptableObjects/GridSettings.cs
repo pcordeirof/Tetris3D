@@ -33,6 +33,7 @@ public class GridSettings : ScriptableObject
             {
                 RemoveLine(y);
                 MoveLines(y);
+                y--;
             }
         }
     }

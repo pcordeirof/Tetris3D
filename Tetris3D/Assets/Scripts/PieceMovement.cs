@@ -12,6 +12,7 @@ public class PieceMovement : MonoBehaviour
     float timer;
 
     bool isMovable = true;
+    bool gridPositionIsNotNull = true;
 
     public Spawner spawner;
 
@@ -71,14 +72,31 @@ public class PieceMovement : MonoBehaviour
                 }
                 break;
             case KeyCode.UpArrow:
-                piece.transform.eulerAngles += Vector3.forward * 90f;
+                piece.transform.eulerAngles -= Vector3.forward * 90;
                 if (!CheckPositionValidation())
                 {
-                    piece.transform.eulerAngles -= Vector3.forward * 90f;
+                    if (!gridPositionIsNotNull)
+                    {
+                        foreach (Transform block in piece.transform)
+                        {
+                            while(block.transform.position.x >= gridSettings.Width.Value)
+                            {
+                                piece.transform.position -= Vector3.right;
+                            }
+                     
+                            while(block.transform.position.x < 0)
+                            {
+                                piece.transform.position += Vector3.right;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        piece.transform.eulerAngles += Vector3.forward * 90;
+                    }
                     break;
                 }
                 break;
-
         }    
     }
     void GoDown()
@@ -107,7 +125,12 @@ public class PieceMovement : MonoBehaviour
 
             if(gridSettings.GridOfBlocks[(int)block.position.x, (int)block.position.y] != null && block.position.y < gridSettings.Height.Value)
             {
+                gridPositionIsNotNull = true;
                 return false;
+            }
+            else
+            {
+                gridPositionIsNotNull = false;
             }
         }
         return true;
