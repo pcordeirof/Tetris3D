@@ -11,7 +11,7 @@ public class PieceMovement : MonoBehaviour
 
     float timer;
 
-    bool isMovable = true;
+    public bool isMovable = true;
     bool gridPositionIsNotNull = true;
 
     public Spawner spawner;

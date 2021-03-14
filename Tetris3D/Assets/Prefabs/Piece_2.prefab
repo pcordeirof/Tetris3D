@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 2490676993787820810}
   - component: {fileID: 2490676993787820811}
   - component: {fileID: 2490676993787820808}
+  - component: {fileID: 7955043706545714157}
+  - component: {fileID: 4929375640700405122}
   m_Layer: 0
   m_Name: Block
   m_TagString: Untagged
@@ -93,6 +95,49 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &7955043706545714157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2490676993787820814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64bb4b86a8ef435438d63ae61d362ccf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 43d41ffc8dafce74ca8b3622198e957c, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4929375640700405122}
+        m_MethodName: Dissolve
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &4929375640700405122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2490676993787820814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8ceb1b8db70ccc4f9e0f6a6a5df0657, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  meshRenderer: {fileID: 2490676993787820811}
+  dissolveMaterial: {fileID: 2100000, guid: f96f06b77ee48ec49aa7bc728701919c, type: 2}
+  gridSettings: {fileID: 11400000, guid: b713859ca18967e48b25efb529f1f1d8, type: 2}
+  pieceMovement: {fileID: 2490676995375197824}
 --- !u!1 &2490676994135839742
 GameObject:
   m_ObjectHideFlags: 0
@@ -105,6 +150,8 @@ GameObject:
   - component: {fileID: 2490676994135839738}
   - component: {fileID: 2490676994135839739}
   - component: {fileID: 2490676994135839736}
+  - component: {fileID: 506020645679968282}
+  - component: {fileID: 3041063057982719966}
   m_Layer: 0
   m_Name: Block
   m_TagString: Untagged
@@ -186,6 +233,49 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &506020645679968282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2490676994135839742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64bb4b86a8ef435438d63ae61d362ccf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 43d41ffc8dafce74ca8b3622198e957c, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3041063057982719966}
+        m_MethodName: Dissolve
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &3041063057982719966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2490676994135839742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8ceb1b8db70ccc4f9e0f6a6a5df0657, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  meshRenderer: {fileID: 2490676994135839739}
+  dissolveMaterial: {fileID: 2100000, guid: f96f06b77ee48ec49aa7bc728701919c, type: 2}
+  gridSettings: {fileID: 11400000, guid: b713859ca18967e48b25efb529f1f1d8, type: 2}
+  pieceMovement: {fileID: 2490676995375197824}
 --- !u!1 &2490676994163696603
 GameObject:
   m_ObjectHideFlags: 0
@@ -198,6 +288,8 @@ GameObject:
   - component: {fileID: 2490676994163696599}
   - component: {fileID: 2490676994163696596}
   - component: {fileID: 2490676994163696597}
+  - component: {fileID: 1342915709790963863}
+  - component: {fileID: 8924661582570003902}
   m_Layer: 0
   m_Name: Block
   m_TagString: Untagged
@@ -279,6 +371,49 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1342915709790963863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2490676994163696603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64bb4b86a8ef435438d63ae61d362ccf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 43d41ffc8dafce74ca8b3622198e957c, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8924661582570003902}
+        m_MethodName: Dissolve
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &8924661582570003902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2490676994163696603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8ceb1b8db70ccc4f9e0f6a6a5df0657, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  meshRenderer: {fileID: 2490676994163696596}
+  dissolveMaterial: {fileID: 2100000, guid: f96f06b77ee48ec49aa7bc728701919c, type: 2}
+  gridSettings: {fileID: 11400000, guid: b713859ca18967e48b25efb529f1f1d8, type: 2}
+  pieceMovement: {fileID: 2490676995375197824}
 --- !u!1 &2490676994698530814
 GameObject:
   m_ObjectHideFlags: 0
@@ -322,6 +457,8 @@ GameObject:
   - component: {fileID: 2490676994709233276}
   - component: {fileID: 2490676994709233277}
   - component: {fileID: 2490676994709233218}
+  - component: {fileID: 6603433098807176144}
+  - component: {fileID: 7890312600671560965}
   m_Layer: 0
   m_Name: Block
   m_TagString: Untagged
@@ -403,6 +540,49 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &6603433098807176144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2490676994709233216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64bb4b86a8ef435438d63ae61d362ccf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 43d41ffc8dafce74ca8b3622198e957c, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7890312600671560965}
+        m_MethodName: Dissolve
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &7890312600671560965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2490676994709233216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8ceb1b8db70ccc4f9e0f6a6a5df0657, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  meshRenderer: {fileID: 2490676994709233277}
+  dissolveMaterial: {fileID: 2100000, guid: f96f06b77ee48ec49aa7bc728701919c, type: 2}
+  gridSettings: {fileID: 11400000, guid: b713859ca18967e48b25efb529f1f1d8, type: 2}
+  pieceMovement: {fileID: 2490676995375197824}
 --- !u!1 &2490676995375197830
 GameObject:
   m_ObjectHideFlags: 0
@@ -453,4 +633,5 @@ MonoBehaviour:
   piece: {fileID: 2490676995375197830}
   gameConfiguration: {fileID: 11400000, guid: 4849e9292d6f7ca43974af88b7af1f47, type: 2}
   gridSettings: {fileID: 11400000, guid: b713859ca18967e48b25efb529f1f1d8, type: 2}
+  isMovable: 1
   spawner: {fileID: 11400000, guid: 80ad590f36ebe964bb1fa05caf3555af, type: 2}

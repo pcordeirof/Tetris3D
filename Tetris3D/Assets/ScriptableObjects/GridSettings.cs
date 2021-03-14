@@ -33,8 +33,7 @@ public class GridSettings : ScriptableObject
             if (IsComplete(y))
             {
                 RemoveLine(y);
-                MoveLines(y);
-                CompleteLineEvent.Raise();
+                
                 y--;
             }
         }
@@ -56,12 +55,13 @@ public class GridSettings : ScriptableObject
     {
         for (int x = 0; x < Width.Value; x++)
         {
-            Destroy(GridOfBlocks[x, y].gameObject);
             GridOfBlocks[x, y] = null;
         }
+        CompleteLineEvent.Raise();
+        MoveLines(y);
     }
 
-    void MoveLines(int y)
+    public void MoveLines(int y)
     {
         for (int i = y; i < Height.Value -1; i++)
         {

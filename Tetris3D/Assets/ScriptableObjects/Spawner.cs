@@ -8,9 +8,16 @@ using Sirenix.OdinInspector;
 public class Spawner : ScriptableObject
 {
     public GameObject[] pieces;
+    GameObject LastPiece;
 
     public void SpawnNewPiece()
     {
-        Instantiate(pieces[Random.Range(0, pieces.Length)]);
+        GameObject newPiece = pieces[Random.Range(0, pieces.Length)];
+        while(newPiece == LastPiece)
+        {
+            newPiece = pieces[Random.Range(0, pieces.Length)];
+        }
+        LastPiece = newPiece;
+        Instantiate(newPiece);
     }
 }
