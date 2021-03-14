@@ -12,6 +12,7 @@ public class GridSettings : ScriptableObject
 
     public Transform[,] GridOfBlocks;
 
+    public GameEvent CompleteLineEvent;
     public void InstatiateGrid()
     {
         GridOfBlocks = new Transform[(int)Width.Value, (int)Height.Value];
@@ -33,6 +34,7 @@ public class GridSettings : ScriptableObject
             {
                 RemoveLine(y);
                 MoveLines(y);
+                CompleteLineEvent.Raise();
                 y--;
             }
         }

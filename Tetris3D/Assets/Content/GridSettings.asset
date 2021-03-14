@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Width: {fileID: 11400000, guid: d5bd807ff9f4da84690b03deafce7c52, type: 2}
   Height: {fileID: 11400000, guid: f1fed13509a1c0b4a95399faef4af280, type: 2}
+  CompleteLineEvent: {fileID: 11400000, guid: 43d41ffc8dafce74ca8b3622198e957c, type: 2}

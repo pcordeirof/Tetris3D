@@ -13,4 +13,10 @@ MonoBehaviour:
   m_Name: Spawner
   m_EditorClassIdentifier: 
   pieces:
+  - {fileID: 6491349744081935843, guid: 4385037e2fc731247b833e9c1add8444, type: 3}
+  - {fileID: 2490676994698530814, guid: 579a3ea8eec268d46aaef0d10b60433a, type: 3}
+  - {fileID: 1896725547418345796, guid: fdb8736e5fc630f49a67390e067c1bc1, type: 3}
+  - {fileID: 7171336138608162922, guid: 675343283c03c7e4481f821261fdf391, type: 3}
   - {fileID: 8286648853042980633, guid: 00861d94534840f4db42766dd402364c, type: 3}
+  - {fileID: 5629510627881842378, guid: 37d9c18b943eeff4299fb1b8b7e3bb1c, type: 3}
+  - {fileID: 7712250746178611304, guid: a4e1371a35ff8c548b00fda348bbde04, type: 3}
