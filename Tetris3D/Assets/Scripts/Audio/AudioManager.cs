@@ -1,13 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
+using System;
 
 public class AudioManager : MonoBehaviour
 {
     public static AudioManager instance;
-    
-    public AudioSource completeLineSFX;
-    public AudioSource bgMusic;
+
+    public Sound[] sounds;
 
     void Awake()
     {
@@ -18,16 +19,30 @@ public class AudioManager : MonoBehaviour
             Destroy(gameObject);
             return;
         }
+
+        foreach (Sound s in sounds)
+        {
+            s.Source = gameObject.AddComponent<AudioSource>();
+            s.Source.clip = s.Clip;
+            s.Source.volume = s.Volume;
+            s.Source.pitch = s.Pitch;
+            s.Source.loop = s.Loop;
+        }
+        Play("BGMusic");
         DontDestroyOnLoad(gameObject);
     }
 
-    private void Start()
+
+
+    public void Play(string name)
     {
-        bgMusic.Play();
+        Sound s = Array.Find(sounds, sound => sound.SoundName == name);
+        s.Source.Play();
     }
 
-    public void PlayAudioSource()
+    public void ChangeVolume(string name, float amount)
     {
-        completeLineSFX.Play();
+        Sound s = Array.Find(sounds, sound => sound.SoundName == name);
+        s.Source.volume = amount;
     }
 }

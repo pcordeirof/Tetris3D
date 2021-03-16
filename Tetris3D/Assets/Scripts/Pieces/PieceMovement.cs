@@ -16,6 +16,8 @@ public class PieceMovement : MonoBehaviour
 
     public Spawner spawner;
 
+    public GameEvent gameOver;
+
     void Start()
     {
         piece.transform.position = new Vector3(Mathf.FloorToInt(gridSettings.Width.Value / 2), gridSettings.Height.Value, 0f);
@@ -24,7 +26,7 @@ public class PieceMovement : MonoBehaviour
 
     void Update()
     {
-        if (isMovable)
+        if (isMovable && Manager.isPaused == false)
         {
             timer += 1 * Time.deltaTime;
 
@@ -75,6 +77,7 @@ public class PieceMovement : MonoBehaviour
                 piece.transform.eulerAngles -= Vector3.forward * 90;
                 if (!CheckPositionValidation())
                 {
+                    int count = 0;
                     if (!gridPositionIsNotNull)
                     {
                         foreach (Transform block in piece.transform)
@@ -82,12 +85,19 @@ public class PieceMovement : MonoBehaviour
                             while(block.transform.position.x >= gridSettings.Width.Value)
                             {
                                 piece.transform.position -= Vector3.right;
+                                count--;
                             }
                      
                             while(block.transform.position.x < 0)
                             {
                                 piece.transform.position += Vector3.right;
+                                count++;
                             }
+                        }
+                        if (!CheckPositionValidation())
+                        {
+                            piece.transform.position += (-1 * count) * Vector3.right;
+                            piece.transform.eulerAngles += Vector3.forward * 90;
                         }
                     }
                     else
@@ -105,6 +115,7 @@ public class PieceMovement : MonoBehaviour
         timer = 0f;
         if (!CheckPositionValidation())
         {
+
             isMovable = false;
             piece.transform.position += Vector3.up;
             gridSettings.RegisterBlocks(piece);
@@ -119,10 +130,9 @@ public class PieceMovement : MonoBehaviour
         {
             if(block.transform.position.x >= gridSettings.Width.Value || block.transform.position.x < 0 || block.transform.position.y < 0)
             {
-                Debug.LogError(block.transform.position.x);
                 return false;
             }
-
+            
             if(gridSettings.GridOfBlocks[(int)block.position.x, (int)block.position.y] != null && block.position.y < gridSettings.Height.Value)
             {
                 gridPositionIsNotNull = true;
@@ -131,6 +141,18 @@ public class PieceMovement : MonoBehaviour
             else
             {
                 gridPositionIsNotNull = false;
+            }
+        }
+        return true;
+    }
+
+    bool CheckHeight()
+    {
+        foreach(Transform block in piece.transform)
+        {
+            if(block.transform.position.y >= gridSettings.Height.Value)
+            {
+                return false;
             }
         }
         return true;

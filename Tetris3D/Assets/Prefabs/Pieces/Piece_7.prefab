@@ -52,6 +52,7 @@ MonoBehaviour:
   gridSettings: {fileID: 11400000, guid: b713859ca18967e48b25efb529f1f1d8, type: 2}
   isMovable: 1
   spawner: {fileID: 11400000, guid: 80ad590f36ebe964bb1fa05caf3555af, type: 2}
+  gameOver: {fileID: 11400000, guid: 0a04b3f03ee3d4a45a63645cc4dd8f04, type: 2}
 --- !u!1 &7712250745879576119
 GameObject:
   m_ObjectHideFlags: 0

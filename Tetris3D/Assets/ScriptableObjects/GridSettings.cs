@@ -13,16 +13,26 @@ public class GridSettings : ScriptableObject
     public Transform[,] GridOfBlocks;
 
     public GameEvent CompleteLineEvent;
+    public GameEvent GameOverEvent;
     public void InstatiateGrid()
     {
         GridOfBlocks = new Transform[(int)Width.Value, (int)Height.Value];
+        
     }
 
     public void RegisterBlocks(GameObject piece)
     {
         foreach (Transform block in piece.transform)
         {
-            GridOfBlocks[(int)block.position.x, (int)block.position.y] = block;
+            if(block.position.y >= Height.Value)
+            {
+                GameOverEvent.Raise();
+                return;
+            }
+            else
+            {
+                GridOfBlocks[(int)block.position.x, (int)block.position.y] = block;
+            }
         }
     }
 
@@ -73,6 +83,17 @@ public class GridSettings : ScriptableObject
                     GridOfBlocks[x, i].gameObject.transform.position -= Vector3.up;
                     GridOfBlocks[x, i + 1] = null;
                 }
+            }
+        }
+    }
+
+    public void ClearGrid()
+    {
+        for(int i = 0; i < Width.Value; i++)
+        {
+            for(int j = 0; j < Height.Value; j++)
+            {
+                GridOfBlocks[i, j] = null;
             }
         }
     }
